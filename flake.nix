@@ -2,7 +2,7 @@
 # Use home manager configuration to configure user specific settings
 {
   # Documentation https://daiderd.com/nix-darwin/manual/index.html
-  description = "Darwin configuration";
+  description = "Darwin System Configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -50,6 +50,7 @@
 
       system.defaults = {
         dock.autohide = true;
+        screencapture.location = "~/Pictures/Screencaptures";
       };
 
       homebrew.enable = true;
@@ -70,6 +71,17 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
+
+      programs.fish = {
+        enable = true;
+      };
+
+      programs.shh.knownHosts = [
+        {
+          hostNames = [ "202.61.243.115" ];
+          publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIDyx6oHz1jloUPfyt/Gp5Tt0vmk212YVj3+LeHwe20u";
+        }
+      ];
     };
   in
   {
