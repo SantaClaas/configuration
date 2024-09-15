@@ -1,3 +1,7 @@
+# Notes
+
+This is just me experimenting with nix and my notes from it. Don't use any of this.
+
 # Apply Configuration
 
 ```bash
