@@ -72,16 +72,12 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
-      programs.fish = {
-        enable = true;
-      };
-
-      programs.shh.knownHosts = [
+      programs.ssh.knownHosts.tug =
         {
           hostNames = [ "202.61.243.115" ];
           publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIDyx6oHz1jloUPfyt/Gp5Tt0vmk212YVj3+LeHwe20u";
-        }
-      ];
+        };
+
     };
   in
   {
