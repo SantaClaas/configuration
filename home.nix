@@ -1,12 +1,17 @@
 { config, pkgs, ...}:
 
 {
-    home.username = "claas";
-    home.homeDirectory = "/Users/claas";
-    home.stateVersion = "24.05";
+    home = {
+        username = "claas";
+        homeDirectory = "/Users/claas";
+        stateVersion = "24.05";
+        packages = [
+            pkgs.python
+        ];
+    };
 
     programs = {
-    # Let Home Manager install and manage itself.
+        # Let Home Manager install and manage itself.
         home-manager.enable = true;
         git = {
             enable = true;
@@ -26,6 +31,21 @@
         gh = {
             enable = true;
             gitCredentialHelper.enable = true;
+        };
+        # Starship
+        starship = {
+            enable = true;
+
+            # settings = {
+            #     # Set the prompt theme to "minimal".
+            #     prompt = "minimal";
+            #     # Set the character used to prefix the prompt.
+            #     symbol = "➜";
+            #     # Set the character used to prefix the git branch.
+            #     prefix = "[";
+            #     # Set the character used to suffix the git branch.
+            #     suffix = "]";
+            # };
         };
     };
 }
