@@ -6,7 +6,7 @@
         homeDirectory = "/Users/claas";
         stateVersion = "24.05";
         packages = [
-            pkgs.python
+            pkgs.python3
         ];
     };
 
