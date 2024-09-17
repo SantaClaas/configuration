@@ -36,7 +36,7 @@
 
       # Create /etc/zshrc that loads the nix-darwin environment.
       programs.zsh.enable = true;  # default shell on catalina
-      # programs.fish.enable = true;
+      programs.fish.enable = true;
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -63,7 +63,13 @@
       ];
 
       # Tell nix wher the home directory is for hom manager
-      users.users.claas.home = "/Users/claas";
+      users.users = {
+        claas = {
+          home = "/Users/claas";
+          # This does not set the shell for the user. Use instructions above
+          shell = pkgs.fish;
+        };
+      };
 
       # Tell nix to build users that are currently not in the system
       nix.configureBuildUsers = true;
