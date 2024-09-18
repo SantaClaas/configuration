@@ -1,3 +1,11 @@
+# TODO configure fish to work as login shell
+# References
+# https://github.com/nmasur/dotfiles/blob/16a372ce64c853e5a6468c2afc46f66182f0d514/modules/darwin/user.nix#L22-L25
+# https://github.com/LnL7/nix-darwin/issues/122
+# https://github.com/nmasur/dotfiles/commit/2ad5411b909862a8b28dd7d684fb1c460e226d03
+# https://github.com/LnL7/nix-darwin/issues/811
+# TODO bootstrap script fix not being able to call nix after install because it needs shell reopen. Might be able to just call it by path
+
 # This configuration configures the system.
 # Use home manager configuration to configure user specific settings
 {
