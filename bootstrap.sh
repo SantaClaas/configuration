@@ -7,6 +7,9 @@ cp ./nix.conf ~/.config/nix/
 echo "Running nix install script"
 curl -L https://nixos.org/nix/install | bash
 
+echo "Resetting shell"
+source /etc/profile
+
 echo "Installing nix-darwin"
 SCRIPT_DIRECTORY=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 nix run nix-darwin -- switch --flake $SCRIPT_DIRECTORY
