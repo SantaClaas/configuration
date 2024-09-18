@@ -4,8 +4,22 @@ echo "Copying nix.conf to ~/.config/nix/"
 mkdir -p ~/.config/nix/
 cp ./nix.conf ~/.config/nix/
 
+echo "Downloading & verifying nix install script"
+NIX_VERSION = "2.24.6"
+# --location follow redirect
+# --fail fail on bad HTTP code
+INSTALL_SCRIPT = $(curl --location --fail -v https://releases.nixos.org/nix/nix-$NIX_VERSION/install)
+ACTUAL_HASH = $(echo "$INSTALL_SCRIPT" | openssl dgst -sha256)
+EXPECTED_HASH = "idk"
+if ["$ACTUAL_HASH" != "$EXPECTED_HASH"]; then
+    echo "Error: Invalid hash for nix install script. Expected: $EXPECTED_HASH Got: $ACTUAL_HASH"
+    exit 1
+else
+    echo "Hash matches"
+fi
+
 echo "Running nix install script"
-curl -L https://nixos.org/nix/install | bash
+echo "$INSTALL_SCRIPT" | sh
 
 echo "Resetting shell"
 source /etc/profile
