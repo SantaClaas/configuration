@@ -5,7 +5,7 @@ mkdir -p ~/.config/nix/
 cp ./nix.conf ~/.config/nix/
 
 echo "Running nix install script"
-sh < curl -L "https://nixos.org/nix/install"
+curl -L https://nixos.org/nix/install | bash
 
 echo "Installing nix-darwin"
 nix run nix-darwin -- switch --flake ~/.config/nix-darwin
