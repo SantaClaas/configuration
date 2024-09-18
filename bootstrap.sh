@@ -8,4 +8,7 @@ echo "Running nix install script"
 curl -L https://nixos.org/nix/install | bash
 
 echo "Installing nix-darwin"
-nix run nix-darwin -- switch --flake ~/.config/nix-darwin
+SCRIPT_DIRECTORY=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+nix run nix-darwin -- switch --flake $SCRIPT_DIRECTORY
+
+echo "`darwin-rebuild switch --flake $SCRIPT_DIRECTORY` should not work"
