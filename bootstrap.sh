@@ -33,4 +33,4 @@ echo "Installing nix-darwin"
 SCRIPT_DIRECTORY=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 nix run nix-darwin -- switch --flake $SCRIPT_DIRECTORY
 
-echo "`darwin-rebuild switch --flake $SCRIPT_DIRECTORY` should not work"
+echo "darwin-rebuild switch --flake $SCRIPT_DIRECTORY should now work"
