@@ -27,7 +27,7 @@ echo "Running nix install script"
 echo "$INSTALL_SCRIPT" | sh
 
 echo "Resetting shell"
-source /etc/profile
+source /etc/zshrc
 
 echo "Installing nix-darwin"
 SCRIPT_DIRECTORY=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
