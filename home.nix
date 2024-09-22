@@ -7,6 +7,10 @@
         stateVersion = "24.05";
         packages = [
             pkgs.python3
+            # Fast Node (Version) Manager
+            pkgs.fnm
+            # Might not be necessary seems to be included with fnm?
+            # pkgs.pnpm
         ];
     };
 
@@ -26,7 +30,13 @@
         # htop alternative
         btop.enable = true;
         # Fish shell
-        fish.enable = true;
+        fish = {
+            enable = true;
+            # Fast node manager (FNM) setup https://discourse.nixos.org/t/how-to-set-startup-script-in-fish-shell-using-home-manager/24739
+            interactiveShellInit = ''
+              fnm env --use-on-cd | source
+            '';
+        };
         # GitHub CLI
         gh = {
             enable = true;
