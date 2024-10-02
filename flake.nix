@@ -80,6 +80,8 @@
             # "warp"
             # Docker does not seem to work currently
             #"docker"
+            # For tauri app development
+            "cocoapods"
           ];
 
           # Tell nix wher the home directory is for hom manager
