@@ -82,6 +82,7 @@
             #"docker"
             # For tauri app development
             "cocoapods"
+            "google-chrome"
           ];
 
           # Tell nix wher the home directory is for hom manager
