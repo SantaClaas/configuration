@@ -9,6 +9,8 @@
       pkgs.python3
       # Fast Node (Version) Manager
       pkgs.fnm
+      # Faster Node Package Manager
+      pkgs.pnpm
       # Might not be necessary seems to be included with fnm?
       # pkgs.pnpm
       # Probe-rs used for embedded Rust development using embassy in fan-control project
