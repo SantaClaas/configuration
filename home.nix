@@ -15,6 +15,8 @@
       # pkgs.pnpm
       # Probe-rs used for embedded Rust development using embassy in fan-control project
       pkgs.probe-rs
+      # Cloudflared for tunneling local development services to other devices
+      pkgs.cloudflared
     ];
   };
 
