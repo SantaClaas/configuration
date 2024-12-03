@@ -17,8 +17,8 @@
       pkgs.probe-rs
       # Cloudflared for tunneling local development services to other devices
       pkgs.cloudflared
-      # Wireshark for network debugging of my custom Pi Pico DHCP server
-      pkgs.wireshark
+      # libcrux Rust cate needs this for building
+      pkgs.cmake
     ];
   };
 

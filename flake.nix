@@ -83,6 +83,8 @@
             # For tauri app development
             "cocoapods"
             "google-chrome"
+            # Wireshark for network debugging of my custom Pi Pico DHCP server
+            # "wireshark"
           ];
 
           # Tell nix wher the home directory is for hom manager
